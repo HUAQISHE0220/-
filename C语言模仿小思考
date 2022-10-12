@@ -1,0 +1,35 @@
+关于用C语言计算数字n的平方根的巴比伦算法
+首先，本人在CSDN上找到了cpp的代码书写，模仿书写如下：
+#include<iostream>
+using namespace std;
+int main(){
+	double n, guess, r;
+	int i = 0;
+	cout << "请输入您想要求平方根的数:";
+	cin>>n;
+	guess = n / 2;
+	for (i = 0; i < 5; i++) {
+		r = n / guess;
+		guess = (guess + r) / 2;
+	}
+	printf("它的平方根=%.3lf\n",guess);
+	return 0;
+}
+//在网上找到了C++的关于数字n的平方根的巴比伦算法的教程，并尝试模仿书写，结果成功，目前尚未了解C语言关于此的代码如何书写
+其次，本人通过仅有的一小点C语言的知识，不断尝试探索并模仿写出了C语言的相似代码如下：
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	double n, guess, r;
+	int i = 0;
+	printf("请输入您想要求平方根的数:");
+	scanf("%lf", &n);
+	guess = n / 2;
+	for (i = 0; i < 5; i++) {
+		r = n / guess;
+		guess = (guess + r) / 2;
+	}
+	printf("它的平方根=%.3lf\n", guess);
+	return 0;
+是一次小小的成功模仿
